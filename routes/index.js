@@ -4,11 +4,15 @@ router.get("/", (req, res) => {
   res.send("Hello");
 });
 
-router.get("/qr", async (req, res) => {
-  const { qr } = req.query;
-  const { name } = req.params;
-  const qrData = await QRcode.toDataURL(qr);
-  res.send(`<img src=${qrData}>`);
+router.post("/qr", async (req, res) => {
+  // const { qr } = req.query;
+  try {
+    const { name: qr } = req.body;
+    const qrData = await QRcode.toDataURL(qr);
+    res.send(`<img src=${qrData}>`);
+  } catch (e) {
+    res.send("somthing went wrong");
+  }
   //res.send("hello");
 });
 
