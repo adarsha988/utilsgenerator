@@ -1,7 +1,7 @@
 const router = require ("express").Router();
 const QRController= require ("./qr.controller");
 router.get ("/",(req,res)=>{
-
+res.send('QR code is working');
 });
 router.post ('/',async(req,res,next)=>{
     try{
