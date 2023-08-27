@@ -8,7 +8,7 @@ router.post ("/",async(req,res,next)=>{
     try{
         const{from,to,message}=req.body;
         const response=mailService.sendEmail({from,to,message});
-        res.send(response);
+        res.send({response});
 
     }
     catch(e){
@@ -16,3 +16,4 @@ router.post ("/",async(req,res,next)=>{
     }
 
 });
+module.exports=router;
