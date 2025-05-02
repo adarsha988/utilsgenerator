@@ -62,7 +62,7 @@
 if (result.ok) {
   //Read JSON if response was successful
   datas = await result.json();
-  console.log("Success:", datas);
+  alert("QR is mail to your email");
 } else {
   //  Read text if error (can't use .json())
   const errorText = await result.text();
@@ -92,8 +92,8 @@ const togglevariable = async () => {
     const mailQR = document.createElement("div");
     mailQR.className = "input-group";
     mailQR.innerHTML = `
-   <input type="email" class="input-y" id="Email" name="Email" placeholder="uiverse@verse.io" autocomplete="off">
-     <input class="button--submit" value="Subscribe" type="button" onClick="hello()">
+   <input type="email" class="input-y" id="Email" name="Email" placeholder="enter your email" autocomplete="off">
+     <input class="button--submit" value="Mail to your email" type="button" onClick="hello()">
                       
         
       `;
