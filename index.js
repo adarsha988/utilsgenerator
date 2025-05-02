@@ -7,8 +7,7 @@ app.set("view engine", "ejs"); //accept eljs file
 app.set("views", "./views"); //ejs file shoud in be views folder
 app.use("/", indexRouter);
 app.use((err, req, res, next) => {
-  err =
-    process.env.NODE_ENV === "production"
+  err = (process.env.NODE_ENV === "production")
       ? "something is wrong"
       : err.toString();
   res.status(500).send(err);

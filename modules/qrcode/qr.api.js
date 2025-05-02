@@ -6,8 +6,8 @@ res.send('QR code is working');
 router.post ('/',async(req,res,next)=>{
     try{
         const {name: qr}=req.body;
-        const result =await QRController.createQr(qr);
-        res.send(`img scr=${result}/>`);
+        const qrDataUrl =await QRController.createQr(qr);
+        res.json({ qr: qrDataUrl }); 
         
     }
     catch(e){
